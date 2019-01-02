@@ -1,0 +1,60 @@
+//colors
+$fd-colors: (
+  "action": (
+    1: #008CDD, // branded action
+    2: hsl(210, 0%, 100%) // #FFFFFF inverse action
+  ),
+  "text": (
+    1: #E1E4E9, // default text
+    2: #B7BAC2, //
+    3: #A7ABB4, //
+    4: #32363A, //
+    5: #10151C // inverse text
+  ),
+  "background": (
+    1: #10151C, // body background
+    2: #00060C  // content background
+  ),
+  "neutral": (
+    1: #222C3D, //
+    2: #2C3647, //
+    3: #364051, //
+    4: #414B5C //
+  ),
+  "status": (
+    1: #118843, // positive
+    2: #E9730C, // alert
+    3: #FF3B3B, // negative
+    4: hsl(191, 5%, 45%), // #6D7678 neutral
+  ),
+  "accent": (
+    1: hsl(34, 82%, 49%), // #E38B16
+    2: hsl(0, 60%, 66%), // #DC7474
+    3: hsl(332, 75%, 49%), // #DB1F77
+    4: hsl(315, 54%, 49%), // #C0399F
+    5: hsl(238, 65%, 63%), // #6367DE
+    6: hsl(210, 64%, 60%), // #5899DA
+    7: hsl(186, 81%, 39%), // #13A4B4
+    8: hsl(75, 86%, 34%), // #7CA10C
+    9: hsl(269, 54%, 59%), // #955ECF
+    10: hsl(197, 15%, 50%), // #6C8893
+    11: hsl(34, 82%, 45%), // #D17F15
+    12: hsl(0, 60%, 54%), // #D04343
+    13: hsl(210, 64%, 47%), // #2B78C5
+    14: hsl(186, 81%, 31%), // #0F828F
+    15: hsl(206, 15%, 46%), // #647887
+  ),
+  "shell": (
+    1: #00060C, // background
+    2: #E1E4E9 // icons
+  )
+);
+
+//BRING IN DEFAULT SETTINGS so you have access to the full system when defining overrides
+//@import "~fiori-fundamentals/scss/functions";
+//@import "~fiori-fundamentals/scss/settings";
+
+//NO !default flags
+$fd-shellbar-title-color: fd-color("text", 1);
+$fd-forms-select-background-image: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMyMjJDM0QiIGQ9Ik0wIDBoMzZ2MzZIMHoiLz48cGF0aCBkPSJNMjMuMTU2IDE2Ljg0NGMuMjMtLjI1LjQ2OS0uMjUuNzE5IDBhLjQ3OC40NzggMCAwIDEgLjE1Ni4zNDNjMCAuMTI2LS4wNTIuMjQtLjE1Ni4zNDRsLTUuMTU2IDUuMTU3YTEuMDQzIDEuMDQzIDAgMCAxLS43MTkuMjguOTQuOTQgMCAwIDEtLjY4OC0uMjhsLTUuMTg3LTUuMTU3YS40OTQuNDk0IDAgMCAxIDAtLjcxOC40OTQuNDk0IDAgMCAxIC43MTkgMGw1IDVjLjEwNC4xMjUuMjE4LjEyNS4zNDMgMGw0Ljk3LTQuOTd6IiBmaWxsPSIjMDA4Q0REIi8+PC9nPjwvc3ZnPg==";
+$fd-forms-select-background-image--disabled: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMyMjJDM0QiIGQ9Ik0wIDBoMzZ2MzZIMHoiLz48cGF0aCBkPSJNMjMuMTU2IDE2Ljg0NGMuMjMtLjI1LjQ2OS0uMjUuNzE5IDBhLjQ3OC40NzggMCAwIDEgLjE1Ni4zNDNjMCAuMTI2LS4wNTIuMjQtLjE1Ni4zNDRsLTUuMTU2IDUuMTU3YTEuMDQzIDEuMDQzIDAgMCAxLS43MTkuMjguOTQuOTQgMCAwIDEtLjY4OC0uMjhsLTUuMTg3LTUuMTU3YS40OTQuNDk0IDAgMCAxIDAtLjcxOC40OTQuNDk0IDAgMCAxIC43MTkgMGw1IDVjLjEwNC4xMjUuMjE4LjEyNS4zNDMgMGw0Ljk3LTQuOTd6IiBmaWxsLW9wYWNpdHk9Ii40IiBmaWxsPSIjRTFFNEU5Ii8+PC9nPjwvc3ZnPg==";

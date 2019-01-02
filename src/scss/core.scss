@@ -1,0 +1,12 @@
+//GLOBAL STYLE SHEET
+//These are application-wide styles available to all components
+
+//** custom settings (this is important) **
+@import "settings";
+
+//elements and forms
+@import "~fiori-fundamentals/scss/core";
+//layout
+@import "~fiori-fundamentals/scss/layout";
+//convenience classes
+@import "~fiori-fundamentals/scss/helpers";
