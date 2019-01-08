@@ -1,19 +1,58 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
+<div class="fd-shell fd-ui--fundamentals">
+    <div class="fd-shell__header">
+<app-header></app-header>
+    </div>
+    <div class="fd-shell__app">
+        <div class="fd-app">
+            <main class="fd-app__main">
+
+<div class="fd-section">
+  <div class="fd-container fd-container--centered">
+    <div class="fd-col--4 fd-col--shift-4">
+
+<div class="fd-panel">
+    <div class="fd-panel__header">
+        <div class="fd-panel__head">
+            <h1 class="fd-panel__title">
+                Guess the Number
+            </h1>
+            <p class="fd-panel__description">
+                Try your luck and guess the computer-generated number between 1 and {{maxnumber}}
+            </p>
+        </div>
+    </div>
+    <div class="fd-panel__body">
+      <div class="fd-form__set">
+          <div class="fd-form__item">
+              <label class="fd-form__label" for="input-1">Your guess:
+                <span class="fd-has-float-right">
+                    Number of guesses <span class="fd-counter">{{noOfTries}}</span>
+                </span>
+              </label>
+              <input class="fd-form__control" type="number" [value]="guess" (input)="guess = $event.target.value" placeholder="" min="1" [max]="maxnumber">
+              <span *ngIf="message" class="fd-form__message" [ngClass]="{'fd-form__message--warning':!success}">
+    {{message}}
+              </span>
+          </div>
+      </div>
+      <div class="fd-form__set">
+          <div class="fd-form__item fd-has-text-align-right">
+              <button class="fd-button--emphasized" (click)="verifyGuess()">Verify</button>
+              <button class="fd-button--light" (click)="initalizeGame()">Restart</button>
+          </div>
+      </div>
+    </div>
 </div>
-<h2>Here are some links to help you start: <span class="sap-icon--pool"></span></h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
+
+    </div>
+  </div>
+</div>
+
+
+            </main>
+        </div>
+    </div>
+    <div class="fd-shell__overlay fd-overlay fd-overlay--alert" aria-hidden="false">
+      <app-alert *ngIf="success"></app-alert>
+    </div>
+</div>
