@@ -1,0 +1,22 @@
+@import "./../../scss/settings";
+@import "~fiori-fundamentals/scss/functions";
+@import "~fiori-fundamentals/scss/mixins";
+//$fd-color--link: fd-color("text");
+@import "~fiori-fundamentals/scss/components/identifier";
+
+:host {
+	.fd-panel {
+		--fd-panel-border-color: red;
+		--fd-panel-header-border-color: red;
+		border-width: 1px;
+	}
+}
+
+.app-guesses {
+	@include fd-type("5");
+	color: fd-color("text", 5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}

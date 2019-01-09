@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AlertComponent } from './alert/alert.component';
 import { ThemeConfigModule } from './theme-config/theme-config.module';
+import { GuessPanelComponent } from './guess-panel/guess-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AlertComponent
+    AlertComponent,
+    GuessPanelComponent
   ],
   imports: [
     BrowserModule,

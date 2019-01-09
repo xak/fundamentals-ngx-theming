@@ -20,26 +20,23 @@
              </header>
 
 
-
 <div class="fd-section">
   <div class="fd-container fd-container--centered">
-    <div class="fd-col--4 fd-col--shift-4">
+    <div class="fd-col--4 fd-col--shift-3">
 
 <div class="fd-panel">
-    <div class="fd-panel__body">
-      <div class="fd-form__set">
-          <div class="fd-form__item">
-              <label class="fd-form__label" for="input-1">Your guess:
-                <span class="fd-has-float-right">
-                    Number of guesses <span class="fd-counter">{{noOfTries}}</span>
-                </span>
-              </label>
-              <input class="fd-form__control" type="number" [value]="guess" (input)="guess = $event.target.value" placeholder="" min="1" [max]="maxnumber">
-              <span *ngIf="message" class="fd-form__message" [ngClass]="{'fd-form__message--warning':!success}">
-    {{message}}
-              </span>
-          </div>
+    <div class="fd-panel__header">
+<h1 class="fd-panel__title">Your guess</h1>
       </div>
+    <div class="fd-panel__body">
+      <form class="fd-form__set" (submit)="verifyGuess()">
+          <div class="fd-form__item">
+
+
+              <input class="fd-form__control" type="number" [value]="guess" (input)="guess = $event.target.value" placeholder="" min="1" [max]="maxnumber">
+
+          </div>
+      </form>
       <div class="fd-form__set">
           <div class="fd-form__item fd-has-text-align-right">
               <button class="fd-button--emphasized" (click)="verifyGuess()">Verify</button>
@@ -49,7 +46,16 @@
     </div>
 </div>
 
+
+
     </div>
+
+
+    <div class="fd-col--2">
+<app-guess-panel [noOfTries]="noOfTries"></app-guess-panel>
+      </div>
+
+
   </div>
 </div>
 
@@ -58,8 +64,8 @@
             </main>
         </div>
     </div>
-    <div class="fd-shell__overlay fd-overlay" [ngClass]="{'fd-foverlay--alert':success, 'fd-overlay--modal':modal}" aria-hidden="false">
-      <app-alert *ngIf="success"></app-alert>
+    <div class="fd-shell__overlay fd-overlay" [ngClass]="{'fd-overlay--alert':message, 'fd-overlay--modal':modal}" aria-hidden="false">
+      <app-alert *ngIf="message" [warning]="warning" [success]="success"  [message]="message"></app-alert>
 
 
 
