@@ -17,8 +17,8 @@ export class ThemeConfigComponent implements OnInit {
   ngOnInit() {
     this.actionColor = this.getCssVar('--fd-color-action-1');
     this.shellColor = this.getCssVar('--fd-color-shell-1');
-    this.textColor = this.getCssVar('--fd-color-text-1');
-    this.backgroundColor = this.getCssVar('--fd-color-background-2');
+    //this.textColor = this.getCssVar('--fd-color-text-2');
+    this.backgroundColor = this.getCssVar('--fd-color-background-1');
   }
 
   save(event) {
@@ -31,14 +31,16 @@ export class ThemeConfigComponent implements OnInit {
       document.documentElement.style.setProperty('--fd-color-shell-1', this.shellColor);
     //  document.documentElement.style.setProperty(`--secondary-darken`, this.lightenColor(this.secondaryColor, -15));
     }
-    if (this.textColor) {
-      document.documentElement.style.setProperty('--fd-color-text-1', this.textColor);
-    //  document.documentElement.style.setProperty(`--secondary-darken`, this.lightenColor(this.secondaryColor, -15));
-    }
-    // if (this.backgroundColor) {
-    //   document.documentElement.style.setProperty('--fd-color-background-2', this.backgroundColor);
+    // if (this.textColor) {
+    //   //document.documentElement.style.setProperty('--fd-color-text-1', this.textColor);
+    //   document.documentElement.style.setProperty('--fd-color-text-2', this.textColor);
+    //   //document.documentElement.style.setProperty('--fd-color-text-3', this.textColor);
     // //  document.documentElement.style.setProperty(`--secondary-darken`, this.lightenColor(this.secondaryColor, -15));
     // }
+    if (this.backgroundColor) {
+      document.documentElement.style.setProperty('--fd-color-background-1', this.backgroundColor);
+    //  document.documentElement.style.setProperty(`--secondary-darken`, this.lightenColor(this.secondaryColor, -15));
+    }
   }
 
   getCssVar(name: string) {
