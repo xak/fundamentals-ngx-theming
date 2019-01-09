@@ -8,7 +8,7 @@ import { AlertComponent } from './alert/alert.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title: string;
   maxnumber: number;
   deviation: number;
   noOfTries: number;
@@ -16,11 +16,13 @@ export class AppComponent {
   guess: number;
   message: string;
   success: boolean;
+  modal: boolean;
 
   constructor() {
     this.initalizeGame();
   }
   initalizeGame() {
+      this.title = "Guess the Number";
       this.noOfTries = 0;
       this.maxnumber = 10;
       this.original = Math.floor((Math.random() * this.maxnumber) + 1);
@@ -28,6 +30,7 @@ export class AppComponent {
       this.deviation = null;
       this.message = null;
       this.success = false;
+      this.modal = false;
   }
   verifyGuess() {
       this.deviation = this.original - this.guess;
@@ -42,6 +45,12 @@ export class AppComponent {
         this.message = null;
       }
 
+  }
+  closeModal() {
+    this.modal = false;
+  }
+  openModal() {
+    this.modal = true;
   }
 
 }

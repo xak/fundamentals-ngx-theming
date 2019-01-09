@@ -1,0 +1,25 @@
+<div class="bg-light p-4">
+  <form (submit)="save()" (change)="save()" class="fd-form__set">
+    <div class="fd-form__item">
+      <label class="fd-form__label" for="actionColor">Action color</label>
+      <input type="text" class="fd-form__control" [(colorPicker)]="actionColor" cpPosition="bottom" [style.background]="actionColor" (colorPickerChange)="save()"
+      />
+    </div>
+    <div class="fd-form__item">
+      <label class="fd-form__label" for="textColor">Text color</label>
+      <input type="text" class="fd-form__control" [(colorPicker)]="textColor" cpPosition="bottom" [style.background]="textColor" (colorPickerChange)="save()"
+      />
+    </div>
+    <div class="fd-form__item">
+      <label class="fd-form__label" for="shellColor">Shell color</label>
+      <input type="text" class="fd-form__control" [(colorPicker)]="shellColor" cpPosition="bottom" [style.background]="shellColor" (colorPickerChange)="save()"
+      />
+    </div>
+    <div class="fd-form__item">
+      <label class="fd-form__label" for="backgroundColor">Background color</label>
+      <input type="text" class="fd-form__control" [(colorPicker)]="backgroundColor" cpPosition="bottom" [style.background]="backgroundColor" (colorPickerChange)="save()"
+      />
+    </div>
+
+  </form>
+</div>

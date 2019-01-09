@@ -1,26 +1,31 @@
 <div class="fd-shell fd-ui--fundamentals">
     <div class="fd-shell__header">
-<app-header></app-header>
+<app-header [title]="title"></app-header>
+<button style="position: absolute; right: 24px; top: 6px;" class="fd-button--shell sap-icon--palette" (click)="openModal()"></button>
     </div>
     <div class="fd-shell__app">
         <div class="fd-app">
             <main class="fd-app__main">
+              <article class="fd-page">
+                <header class="fd-page__header">
+                 <div class="fd-action-bar">
+                     <div class="fd-action-bar__header">
+                       <h1 class="fd-action-bar__title">
+                           Try your luck
+                       </h1>
+                       <p class="fd-action-bar__description">Guess the computer-generated number between 1 and {{maxnumber}}</p>
+                     </div>
+
+                 </div>
+             </header>
+
+
 
 <div class="fd-section">
   <div class="fd-container fd-container--centered">
     <div class="fd-col--4 fd-col--shift-4">
 
 <div class="fd-panel">
-    <div class="fd-panel__header">
-        <div class="fd-panel__head">
-            <h1 class="fd-panel__title">
-                Guess the Number
-            </h1>
-            <p class="fd-panel__description">
-                Try your luck and guess the computer-generated number between 1 and {{maxnumber}}
-            </p>
-        </div>
-    </div>
     <div class="fd-panel__body">
       <div class="fd-form__set">
           <div class="fd-form__item">
@@ -49,10 +54,31 @@
 </div>
 
 
+             </article>
             </main>
         </div>
     </div>
-    <div class="fd-shell__overlay fd-overlay fd-overlay--alert" aria-hidden="false">
+    <div class="fd-shell__overlay fd-overlay" [ngClass]="{'fd-foverlay--alert':success, 'fd-overlay--modal':modal}" aria-hidden="false">
       <app-alert *ngIf="success"></app-alert>
+
+
+
+      <div *ngIf="modal" class="fd-modal" role="dialog">
+            <div class="fd-modal__content" role="document">
+                <header class="fd-modal__header">
+                    <h1 class="fd-modal__title">Runtime Theme Configuration</h1>
+                    <button class="fd-button--light fd-modal__close" (click)="closeModal()"></button>
+                </header>
+                <div class="fd-modal__body">
+
+<app-theme-config></app-theme-config>
+
+                </div>
+              </div>
+          </div>
+
+
+
+
     </div>
 </div>
