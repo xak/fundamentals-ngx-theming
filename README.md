@@ -16,3 +16,7 @@ npm install ../fundamental/fiori-fundamentals-1.4.1.tgz
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
+## Build
+`ng build --prod --aot=false --base-href http://test.zackfrazier.com/guess/`
